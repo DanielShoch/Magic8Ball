@@ -23,10 +23,12 @@ def callback():
     thinkinglbl = Label(window, text="Mmmmh....")
     thinkinglbl.place(x=300, y=250, anchor="center")
     window.after(1500, callback2)
+    thinkinglbl.after(3500, thinkinglbl.destroy)
 
 def callback2():
     answerlbl = Label(window, text=random.choice(answersList), font=("Verdana", 24))
     answerlbl.place(x=300, y=300, anchor="center")
+    answerlbl.after(2000, answerlbl.destroy)
 
 #Button
 btn = Button(window, text="Ask A Question", command=callback, font=("Verdana", 14), fg="navy", padx=5, pady=5)
