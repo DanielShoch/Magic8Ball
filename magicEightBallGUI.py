@@ -22,7 +22,9 @@ userinput.place(x=300, y=165, anchor="center")
 def callback():
     thinkinglbl = Label(window, text="Mmmmh....")
     thinkinglbl.place(x=300, y=250, anchor="center")
-    time.sleep(1)
+    window.after(1500, callback2)
+
+def callback2():
     answerlbl = Label(window, text=random.choice(answersList), font=("Verdana", 24))
     answerlbl.place(x=300, y=300, anchor="center")
 
